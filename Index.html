@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencias Wellness Monterrey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #2a5c4d; /* Verde wellness */
+            --color-secondary: #e8f4f0; /* Verde claro */
+            --color-accent: #d4a574; /* Color cálido */
+            --color-light: #f8f9fa;
+            --color-dark: #1a3c32;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--color-white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2;
+        }
+
+        .logo-line1 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+        }
+
+        .logo-line2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .logo-line3 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--color-primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(42, 92, 77, 0.9), rgba(42, 92, 77, 0.8)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* SECTION STYLES */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* WHAT WE DO */
+        .what-we-do {
+            background-color: var(--color-white);
+            border-radius: var(--radius);
+            padding: 60px;
+            box-shadow: var(--shadow);
+            margin-bottom: 80px;
+        }
+
+        .what-we-do h2 {
+            text-align: center;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--radius);
+            background-color: var(--color-secondary);
+            transition: var(--transition);
+        }
+
+        .pillar:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .pillar h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+
+        /* EXPERIENCES */
+        .experiences-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .experience-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .experience-header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .experience-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-content {
+            padding: 30px;
+        }
+
+        .experience-content p {
+            margin-bottom: 20px;
+            color: var(--color-text-light);
+        }
+
+        .coming-soon {
+            text-align: center;
+            padding: 60px 30px;
+            background-color: var(--color-secondary);
+            border-radius: var(--radius);
+            margin-bottom: 60px;
+        }
+
+        /* RANKINGS */
+        .ranking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .ranking-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .ranking-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .ranking-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .ranking-card h4 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .ranking-card p {
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+        }
+
+        /* BRANDS */
+        .brands-section {
+            background-color: var(--color-secondary);
+            padding: 80px 0;
+            border-radius: var(--radius);
+        }
+
+        .brands-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .brand-item {
+            background-color: var(--color-white);
+            padding: 20px 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-light);
+            min-width: 200px;
+            text-align: center;
+        }
+
+        /* COMMUNITY */
+        .community-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .community-box {
+            background-color: var(--color-white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-light);
+        }
+
+        .community-box h3 {
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .community-box ul {
+            list-style-position: inside;
+            margin-bottom: 30px;
+        }
+
+        .community-box li {
+            margin-bottom: 10px;
+            color: var(--color-text-light);
+        }
+
+        /* CONTACT */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-white);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           PANEL DE ADMINISTRACIÓN MEJORADO
+        ============================================ */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.97);
+            z-index: 2000;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .admin-tab {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .admin-tab.active {
+            background: var(--color-primary);
+        }
+
+        .admin-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .admin-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .admin-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: var(--radius);
+        }
+
+        .admin-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .admin-form-group label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+
+        .admin-form-group input,
+        .admin-form-group select,
+        .admin-form-group textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+        }
+
+        .admin-form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .admin-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .admin-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .admin-btn.primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .admin-btn.success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .admin-btn.danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .admin-btn.secondary {
+            background: #666;
+            color: white;
+        }
+
+        .admin-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .data-list {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: var(--radius);
+        }
+
+        .data-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .data-item-info h4 {
+            margin-bottom: 5px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .data-item-info p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .data-item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit-btn-small, .delete-btn-small {
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .edit-btn-small {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .delete-btn-small {
+            background: #f44336;
+            color: white;
+        }
+
+        .edit-btn-small:hover, .delete-btn-small:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .admin-access-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .admin-access-btn:hover {
+            transform: scale(1.1);
+            background: var(--color-dark);
+        }
+
+        /* Botón de cerrar panel */
+        .close-admin-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f44336;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-admin-btn:hover {
+            transform: rotate(90deg);
+            background: #d32f2f;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo-line1, .logo-line3 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-line2 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                width: 100%;
+            }
+            
+            .nav-menu.active {
+                display: block;
+            }
+            
+            .what-we-do {
+                padding: 40px 20px;
+            }
+            
+            .admin-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-item {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .data-item-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .admin-tabs {
+                flex-direction: column;
+            }
+            
+            .admin-tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Notificaciones del admin */
+        .admin-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Mejoras visuales para el admin */
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER CON LOGO MEJORADO -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <div class="logo-line1">EXPERIENCIAS</div>
+                    <div class="logo-line2">WELLNESS</div>
+                    <div class="logo-line3">MONTERREY</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#experiencias" class="nav-link">Experiencias</a></li>
+                    <li><a href="#ranking" class="nav-link">Ranking</a></li>
+                    <li><a href="#marcas" class="nav-link">Marcas</a></li>
+                    <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION CON TEXTO ACTUALIZADO -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Experiencias y eventos de bienestar en Monterrey</h1>
+            <p>Creamos experiencias y eventos de bienestar donde puedes despejar la mente, sentirte mejor y conocer personas en un ambiente seguro y bonito.<br><br>Además, colaboramos con marcas y espacios locales que nos inspiran, recomendándote lugares y negocios que te ayudan a sentirte bien y vivir la ciudad de una forma más consciente.</p>
+            <div class="hero-buttons">
+                <a href="#experiencias" class="btn btn-primary">Ver experiencias 2026</a>
+                <a href="#comunidad" class="btn btn-secondary">Unirme a la comunidad</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Qué hacemos?</h2>
+                <p>Cada mes creamos experiencias diferentes con un objetivo simple: que despejes tu mente, te sientas mejor contigo mismo(a) y conectes con otras personas en un ambiente seguro, tranquilo y lleno de buena vibra.</p>
+            </div>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Naturaleza</h3>
+                    <p>Espacios al aire libre y ambientes tranquilos que te ayudan a reconectar con lo esencial.</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Bienestar</h3>
+                    <p>Actividades diseñadas para que te sientas mejor física y emocionalmente.</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Conexión real</h3>
+                    <p>Dinámicas guiadas para conocer personas afines sin incomodidad ni presión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIAS 2026 -->
+    <section class="section" id="experiencias">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experiencias 2026</h2>
+                <p>Cada mes encontrarás eventos diseñados para salir de la rutina, reconectar contigo y convivir con otras personas de forma natural.</p>
+            </div>
+            
+            <div class="experiences-container" id="experiencesContainer">
+                <!-- Las experiencias se cargan con JavaScript -->
+            </div>
+            
+            <div class="coming-soon">
+                <h3>Muy pronto publicaremos fechas, cupos, qué incluye cada experiencia y los links de registro.</h3>
+                <a href="#comunidad" class="btn btn-primary" style="margin-top: 20px;">Quiero enterarme primero</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RANKING 2025 -->
+    <section class="section" id="ranking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ranking 2025</h2>
+                <p>Top 9 Recomendaciones 2025 - Planes probados que amamos por su vibe, calidad y experiencia.</p>
+            </div>
+            
+            <div class="ranking-grid" id="rankingGrid">
+                <!-- Las tarjetas de ranking se generan con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- MARCAS -->
+    <section class="section brands-section" id="marcas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Marcas con las que hemos trabajado</h2>
+                <p>Colaboramos con marcas, coaches y espacios que comparten nuestra vibra: bienestar, naturaleza, comunidad y experiencias bonitas.</p>
+            </div>
+            
+            <div class="brands-grid" id="brandsGrid">
+                <!-- Las marcas se generan con JavaScript -->
+            </div>
+            
+            <div class="coming-soon" style="background-color: var(--color-white); margin-top: 60px;">
+                <h3>¿Eres marca y quieres aparecer en nuestras redes?</h3>
+                <p>Si tienes una marca, negocio o proyecto y quieres aparecer en las redes sociales de Experiencias Wellness MTY, podemos hacerlo a través de reseñas de experiencias, contenido para redes (UGC, reels, stories), activaciones en eventos, patrocinios y rifas, o colaboraciones con nuestra comunidad.</p>
+                <button class="btn btn-primary" style="margin-top: 20px;" onclick="showBrandForm()">Quiero aparecer en las redes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMUNIDAD -->
+    <section class="section" id="comunidad">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comunidad</h2>
+                <p>Un espacio seguro para quienes buscan bienestar, conexión real y experiencias significativas.</p>
+            </div>
+            
+            <div class="community-container">
+                <div class="community-box">
+                    <h3>¿Para quién es?</h3>
+                    <ul>
+                        <li>Para quienes aman la naturaleza y la tranquilidad</li>
+                        <li>Para quienes buscan un espacio seguro, bonito y guiado</li>
+                        <li>Para quienes quieren conocer gente nueva</li>
+                        <li>Para quienes quieren sentirse mejor física y emocionalmente</li>
+                    </ul>
+                </div>
+                
+                <div class="community-box">
+                    <h3>¿Qué obtienes al unirte?</h3>
+                    <ul>
+                        <li>Enterarte primero de eventos y preventas</li>
+                        <li>Acceso a experiencias con cupo limitado</li>
+                        <li>Recomendaciones y planes wellness</li>
+                        <li>Formar parte de una comunidad con buena vibra</li>
+                    </ul>
+                    <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="joinCommunity('whatsapp')">Unirme por WhatsApp</button>
+                        <button class="btn btn-secondary" onclick="joinCommunity('email')">Unirme por correo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO CON REDES ACTUALIZADAS -->
+    <section class="section" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>¿Tienes dudas o quieres colaborar con nosotros?</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+52 81 2974 1669</p>
+                            <small>Haz clic para chatear</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h3>Instagram</h3>
+                            <p>@experienciaswellness.mty</p>
+                            <small>Síguenos para actualizaciones</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div>
+                            <h3>TikTok</h3>
+                            <p>@experienciaswellness.mty</p>
+                            <small>Contenido exclusivo</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div>
+                            <h3>YouTube</h3>
+                            <p>@ExperienciasWellness</p>
+                            <small>Videos de nuestras experiencias</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="community-box">
+                    <h3>Formulario de contacto</h3>
+                    <form id="contactForm">
+                        <div class="admin-form-group">
+                            <label for="contactName">Nombre</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="contactEmail">Correo electrónico</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="contactMessage">Mensaje</label>
+                            <textarea id="contactMessage" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">EXPERIENCIAS WELLNESS MTY</div>
+                    <p>Monterrey, NL<br>Bienestar • Naturaleza • Conexión real</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/528129741669" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/experienciaswellness.mty" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@experienciaswellness.mty" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@ExperienciasWellness" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Enlaces rápidos</h3>
+                    <div class="footer-links">
+                        <a href="#experiencias">Experiencias</a>
+                        <a href="#ranking">Rankings</a>
+                        <a href="#marcas">Marcas</a>
+                        <a href="#comunidad">Comunidad</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Newsletter</h3>
+                    <p>Recibe información sobre próximas experiencias y recomendaciones wellness.</p>
+                    <div class="admin-form-group" style="margin-top: 15px;">
+                        <input type="email" id="newsletterEmail" placeholder="Tu correo electrónico">
+                        <button class="btn btn-primary" style="margin-top: 10px;" onclick="subscribeNewsletter()">Suscribirme</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Experiencias Wellness Monterrey. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PANEL DE ADMINISTRACIÓN MEJORADO -->
+    <button class="admin-access-btn" id="adminAccessBtn" title="Panel de Administración">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <div class="admin-panel" id="adminPanel">
+        <div class="container">
+            <button class="close-admin-btn" onclick="closeAdminPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="admin-header">
+                <h2>Panel de Administración - Experiencias Wellness</h2>
+            </div>
+            
+            <div class="admin-stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="statRanking">0</div>
+                    <div>Lugares en Ranking</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="statExperiences">0</div>
+                    <div>Experiencias Activas</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="statBrands">0</div>
+                    <div>Marcas Colaboradoras</div>
+                </div>
+            </div>
+            
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="ranking">Ranking de Lugares</button>
+                <button class="admin-tab" data-tab="experiences">Experiencias</button>
+                <button class="admin-tab" data-tab="brands">Marcas Colaboradoras</button>
+                <button class="admin-tab" data-tab="data">Datos y Exportación</button>
+            </div>
+            
+            <!-- SECCIÓN RANKING -->
+            <div class="admin-section active" id="admin-ranking">
+                <h3>Gestionar Ranking de Lugares</h3>
+                <p>Edita los 9 lugares recomendados que aparecen en la página principal.</p>
+                
+                <form id="rankingForm" class="admin-form">
+                    <input type="hidden" id="rankingId">
+                    <div class="admin-form-group">
+                        <label for="rankingName">Nombre del lugar *</label>
+                        <input type="text" id="rankingName" required placeholder="Ej: Taro Haus">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="rankingDescription">Descripción *</label>
+                        <textarea id="rankingDescription" required placeholder="Ej: Sabores top • Mucha variedad • Opciones más ligeras"></textarea>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="rankingPosition">Posición (1-9) *</label>
+                        <input type="number" id="rankingPosition" min="1" max="9" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="rankingEmoji">Emoji (opcional)</label>
+                        <input type="text" id="rankingEmoji" placeholder="🏆">
+                    </div>
+                    <div class="admin-buttons">
+                        <button type="submit" class="admin-btn success">Guardar Lugar</button>
+                        <button type="button" class="admin-btn secondary" onclick="resetRankingForm()">Limpiar Formulario</button>
+                    </div>
+                </form>
+                
+                <h4>Lugares actuales en el ranking</h4>
+                <div class="data-list" id="rankingList">
+                    <!-- Los lugares se cargan con JavaScript -->
+                </div>
+            </div>
+            
+            <!-- SECCIÓN EXPERIENCIAS -->
+            <div class="admin-section" id="admin-experiences">
+                <h3>Gestionar Experiencias 2026</h3>
+                <p>Administra las experiencias que aparecen en la sección principal.</p>
+                
+                <form id="experienceForm" class="admin-form">
+                    <input type="hidden" id="experienceId">
+                    <div class="admin-form-group">
+                        <label for="experienceMonth">Mes *</label>
+                        <input type="text" id="experienceMonth" required placeholder="Ej: Enero 2026">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="experienceTitle">Título *</label>
+                        <input type="text" id="experienceTitle" required placeholder="Ej: Yoga al Amanecer">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="experienceDescription">Descripción *</label>
+                        <textarea id="experienceDescription" required placeholder="Describe la experiencia"></textarea>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="experienceStatus">Estado</label>
+                        <select id="experienceStatus">
+                            <option value="coming-soon">Coming Soon</option>
+                            <option value="open">Inscripciones Abiertas</option>
+                            <option value="waitlist">Lista de Espera</option>
+                            <option value="completed">Completada</option>
+                        </select>
+                    </div>
+                    <div class="admin-buttons">
+                        <button type="submit" class="admin-btn success">Guardar Experiencia</button>
+                        <button type="button" class="admin-btn secondary" onclick="resetExperienceForm()">Limpiar Formulario</button>
+                    </div>
+                </form>
+                
+                <h4>Experiencias programadas</h4>
+                <div class="data-list" id="experienceList">
+                    <!-- Las experiencias se cargan con JavaScript -->
+                </div>
+            </div>
+            
+            <!-- SECCIÓN MARCAS -->
+            <div class="admin-section" id="admin-brands">
+                <h3>Gestionar Marcas Colaboradoras</h3>
+                <p>Administra las marcas que aparecen en la sección "Marcas con las que hemos trabajado".</p>
+                
+                <form id="brandForm" class="admin-form">
+                    <input type="hidden" id="brandId">
+                    <div class="admin-form-group">
+                        <label for="brandName">Nombre de la marca *</label>
+                        <input type="text" id="brandName" required placeholder="Ej: Taro Haus">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="brandDescription">Descripción (opcional)</label>
+                        <textarea id="brandDescription" placeholder="Breve descripción de la marca"></textarea>
+                    </div>
+                    <div class="admin-buttons">
+                        <button type="submit" class="admin-btn success">Guardar Marca</button>
+                        <button type="button" class="admin-btn secondary" onclick="resetBrandForm()">Limpiar Formulario</button>
+                    </div>
+                </form>
+                
+                <h4>Marcas actuales</h4>
+                <div class="data-list" id="brandList">
+                    <!-- Las marcas se cargan con JavaScript -->
+                </div>
+            </div>
+            
+            <!-- SECCIÓN DATOS -->
+            <div class="admin-section" id="admin-data">
+                <h3>Datos y Exportación</h3>
+                <p>Exporta los datos del sitio o importa datos desde un archivo JSON.</p>
+                
+                <div class="admin-buttons">
+                    <button class="admin-btn primary" onclick="exportData('ranking')">Exportar Ranking (JSON)</button>
+                    <button class="admin-btn primary" onclick="exportData('experiences')">Exportar Experiencias (JSON)</button>
+                    <button class="admin-btn primary" onclick="exportData('brands')">Exportar Marcas (JSON)</button>
+                    <button class="admin-btn danger" onclick="clearAllData()">Borrar Todos los Datos</button>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: var(--radius);">
+                    <h4>Importar Datos</h4>
+                    <p>Sube un archivo JSON para importar datos:</p>
+                    <input type="file" id="importFile" accept=".json" style="margin: 15px 0; color: white;">
+                    <button class="admin-btn primary" onclick="importData()">Importar Datos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div class="admin-notification" id="adminNotification"></div>
+
+    <script>
+        // ============================================
+        // DATOS INICIALES
+        // ============================================
+        
+        // Datos del ranking (se pueden editar en el panel de admin)
+        let rankingData = [
+            { id: 1, name: "Taro Haus", description: "Sabores top • Mucha variedad • Opciones más ligeras", position: 1, emoji: "🏆" },
+            { id: 2, name: "Paykekes", description: "Tarta vasca • Sin gluten • Trato increíble", position: 2, emoji: "🏆" },
+            { id: 3, name: "Lienzo y Latte", description: "Muy creativo • Todo rico • Pintar + cafecito", position: 3, emoji: "🏆" },
+            { id: 4, name: "Boule Panadería", description: "Masa madre • Todo en un lugar • Natural / orgánico", position: 4, emoji: "🏆" },
+            { id: 5, name: "Soji Candle", description: "Kit completo • Manifestar + crear • Pareja / amigas", position: 5, emoji: "🏆" },
+            { id: 6, name: "Casa Verde", description: "Semana resuelta • Saludable • Desayuno / comida / cena", position: 6, emoji: "🏆" },
+            { id: 7, name: "Yooju", description: "Práctico • Muy saludable • Ideal para moverte / deporte", position: 7, emoji: "🏆" },
+            { id: 8, name: "Aguas de Frutas Julia", description: "Variedad • Calidad top • Servicio increíble", position: 8, emoji: "🏆" },
+            { id: 9, name: "Mr. Mush", description: "Pizzas brutales • Fermentación lenta • Excelente servicio", position: 9, emoji: "🏆" }
+        ];
+
+        // Datos de experiencias (se pueden editar en el panel de admin)
+        let experiencesData = [
+            { id: 1, month: "Enero 2026", title: "Coming Soon", description: "Próximamente anunciaremos nuestra primera experiencia del año. Será algo especial para comenzar el 2026 con energía positiva.", status: "coming-soon" },
+            { id: 2, month: "Febrero 2026", title: "Coming Soon", description: "Una experiencia diseñada para el mes del amor, pero enfocada en el amor propio y las conexiones genuinas.", status: "coming-soon" },
+            { id: 3, month: "Marzo 2026", title: "Coming Soon", description: "Con la llegada de la primavera, organizaremos una experiencia especial para renovar energías.", status: "coming-soon" }
+        ];
+
+        // Datos de marcas colaboradoras (se pueden editar en el panel de admin)
+        let brandsData = [
+            { id: 1, name: "Taro Haus", description: "Nieves artesanales con sabores únicos" },
+            { id: 2, name: "Boule Panadería", description: "Panadería de masa madre y productos orgánicos" },
+            { id: 3, name: "Soji Candle", description: "Talleres de velas aromáticas y manifestación" },
+            { id: 4, name: "Casa Verde", description: "Meal prep saludable y delicioso" }
+        ];
+
+        // ============================================
+        // FUNCIONES PRINCIPALES DE LA PÁGINA
+        // ============================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar la página
+            loadFromLocalStorage();
+            renderRanking();
+            renderExperiences();
+            renderBrands();
+            updateStats();
+            
+            // Navegación suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Actualizar navegación activa
+                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Desplazamiento suave
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Cerrar menú móvil si está abierto
+                        const navMenu = document.getElementById('navMenu');
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Menú móvil
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Formulario de contacto
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value;
+                const email = document.getElementById('contactEmail').value;
+                const message = document.getElementById('contactMessage').value;
+                
+                // Guardar contacto en localStorage
+                const contacts = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+                contacts.push({
+                    name: name,
+                    email: email,
+                    message: message,
+                    date: new Date().toLocaleString()
+                });
+                localStorage.setItem('contactMessages', JSON.stringify(contacts));
+                
+                showNotification('Mensaje enviado correctamente. Te contactaremos pronto.', 'success');
+                contactForm.reset();
+            });
+            
+            // Panel de administración
+            const adminAccessBtn = document.getElementById('adminAccessBtn');
+            adminAccessBtn.addEventListener('click', function() {
+                openAdminPanel();
+            });
+            
+            // Tabs del panel de administración
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Actualizar tabs activos
+                    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Mostrar sección correspondiente
+                    document.querySelectorAll('.admin-section').forEach(section => section.classList.remove('active'));
+                    document.getElementById(`admin-${tabId}`).classList.add('active');
+                });
+            });
+            
+            // Formularios del panel de administración
+            setupAdminForms();
+        });
+
+        // Renderizar ranking en la página principal
+        function renderRanking() {
+            const rankingGrid = document.getElementById('rankingGrid');
+            rankingGrid.innerHTML = '';
+            
+            // Ordenar por posición
+            rankingData.sort((a, b) => a.position - b.position);
+            
+            rankingData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'ranking-card';
+                card.innerHTML = `
+                    <div class="ranking-badge">${item.position}</div>
+                    <h4>${item.emoji || '🏆'} ${item.name}</h4>
+                    <p>${item.description}</p>
+                `;
+                rankingGrid.appendChild(card);
+            });
+        }
+
+        // Renderizar experiencias en la página principal
+        function renderExperiences() {
+            const experiencesContainer = document.getElementById('experiencesContainer');
+            experiencesContainer.innerHTML = '';
+            
+            experiencesData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'experience-card';
+                card.innerHTML = `
+                    <div class="experience-header">
+                        <h3>${item.month}</h3>
+                        <p>${item.title}</p>
+                    </div>
+                    <div class="experience-content">
+                        <p>${item.description}</p>
+                        <small><strong>Estado:</strong> ${getStatusText(item.status)}</small>
+                    </div>
+                `;
+                experiencesContainer.appendChild(card);
+            });
+        }
+
+        // Renderizar marcas en la página principal
+        function renderBrands() {
+            const brandsGrid = document.getElementById('brandsGrid');
+            brandsGrid.innerHTML = '';
+            
+            brandsData.forEach(brand => {
+                const brandItem = document.createElement('div');
+                brandItem.className = 'brand-item';
+                brandItem.innerHTML = `<h4>${brand.name}</h4>`;
+                if (brand.description) {
+                    brandItem.innerHTML += `<p style="font-size: 0.9rem; margin-top: 5px;">${brand.description}</p>`;
+                }
+                brandsGrid.appendChild(brandItem);
+            });
+        }
+
+        // Unirse a la comunidad
+        function joinCommunity(method) {
+            if (method === 'whatsapp') {
+                window.open('https://wa.me/528129741669?text=Hola,%20quiero%20unirme%20a%20la%20comunidad%20de%20Experiencias%20Wellness%20MTY', '_blank');
+            } else {
+                const email = prompt('Por favor, ingresa tu correo electrónico para unirte a la comunidad:');
+                if (email) {
+                    // Guardar en localStorage
+                    const communityMembers = JSON.parse(localStorage.getItem('communityMembers') || '[]');
+                    communityMembers.push({
+                        email: email,
+                        date: new Date().toLocaleDateString(),
+                        method: 'email'
+                    });
+                    localStorage.setItem('communityMembers', JSON.stringify(communityMembers));
+                    
+                    showNotification('¡Gracias por unirte a nuestra comunidad! Te enviaremos información pronto.', 'success');
+                }
+            }
+        }
+
+        // Mostrar formulario para marcas
+        function showBrandForm() {
+            const name = prompt('Nombre de la marca/negocio:');
+            if (!name) return;
+            
+            const email = prompt('Correo electrónico de contacto:');
+            if (!email) return;
+            
+            const message = prompt('Cuéntanos sobre tu marca y cómo te gustaría colaborar:');
+            
+            // Guardar en localStorage
+            const brandRequests = JSON.parse(localStorage.getItem('brandRequests') || '[]');
+            brandRequests.push({
+                name: name,
+                email: email,
+                message: message,
+                date: new Date().toLocaleDateString()
+            });
+            localStorage.setItem('brandRequests', JSON.stringify(brandRequests));
+            
+            showNotification('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.', 'success');
+        }
+
+        // Suscribirse al newsletter
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (!email || !email.includes('@')) {
+                showNotification('Por favor, ingresa un correo electrónico válido.', 'error');
+                return;
+            }
+            
+            // Guardar en localStorage
+            const newsletterSubs = JSON.parse(localStorage.getItem('newsletterSubs') || '[]');
+            newsletterSubs.push({
+                email: email,
+                date: new Date().toLocaleDateString()
+            });
+            localStorage.setItem('newsletterSubs', JSON.stringify(newsletterSubs));
+            
+            showNotification('¡Gracias por suscribirte! Recibirás nuestras novedades pronto.', 'success');
+            document.getElementById('newsletterEmail').value = '';
+        }
+
+        // ============================================
+        // FUNCIONES DEL PANEL DE ADMINISTRACIÓN MEJORADAS
+        // ============================================
+
+        // Abrir panel de administración
+        function openAdminPanel() {
+            const password = prompt('Ingresa la contraseña de administración:');
+            // Contraseña: wellness2025 (puedes cambiarla)
+            if (password === 'wellness2025') {
+                document.getElementById('adminPanel').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                loadRankingList();
+                loadExperienceList();
+                loadBrandList();
+                updateStats();
+            } else {
+                showNotification('Contraseña incorrecta', 'error');
+            }
+        }
+
+        // Cerrar panel de administración
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Configurar formularios del panel
+        function setupAdminForms() {
+            // Formulario de ranking
+            const rankingForm = document.getElementById('rankingForm');
+            rankingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const id = document.getElementById('rankingId').value;
+                const name = document.getElementById('rankingName').value;
+                const description = document.getElementById('rankingDescription').value;
+                const position = parseInt(document.getElementById('rankingPosition').value);
+                const emoji = document.getElementById('rankingEmoji').value;
+                
+                if (id) {
+                    // Editar elemento existente
+                    const index = rankingData.findIndex(item => item.id == id);
+                    if (index !== -1) {
+                        rankingData[index] = { id: parseInt(id), name, description, position, emoji: emoji || "🏆" };
+                    }
+                } else {
+                    // Agregar nuevo elemento
+                    const newId = rankingData.length > 0 ? Math.max(...rankingData.map(item => item.id)) + 1 : 1;
+                    rankingData.push({ id: newId, name, description, position, emoji: emoji || "🏆" });
+                }
+                
+                // Actualizar la vista y guardar
+                renderRanking();
+                loadRankingList();
+                saveToLocalStorage();
+                resetRankingForm();
+                updateStats();
+                
+                showNotification('Lugar guardado correctamente', 'success');
+            });
+            
+            // Formulario de experiencias
+            const experienceForm = document.getElementById('experienceForm');
+            experienceForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const id = document.getElementById('experienceId').value;
+                const month = document.getElementById('experienceMonth').value;
+                const title = document.getElementById('experienceTitle').value;
+                const description = document.getElementById('experienceDescription').value;
+                const status = document.getElementById('experienceStatus').value;
+                
+                if (id) {
+                    // Editar elemento existente
+                    const index = experiencesData.findIndex(item => item.id == id);
+                    if (index !== -1) {
+                        experiencesData[index] = { id: parseInt(id), month, title, description, status };
+                    }
+                } else {
+                    // Agregar nuevo elemento
+                    const newId = experiencesData.length > 0 ? Math.max(...experiencesData.map(item => item.id)) + 1 : 1;
+                    experiencesData.push({ id: newId, month, title, description, status });
+                }
+                
+                // Actualizar la vista y guardar
+                renderExperiences();
+                loadExperienceList();
+                saveToLocalStorage();
+                resetExperienceForm();
+                updateStats();
+                
+                showNotification('Experiencia guardada correctamente', 'success');
+            });
+            
+            // Formulario de marcas
+            const brandForm = document.getElementById('brandForm');
+            brandForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const id = document.getElementById('brandId').value;
+                const name = document.getElementById('brandName').value;
+                const description = document.getElementById('brandDescription').value;
+                
+                if (id) {
+                    // Editar elemento existente
+                    const index = brandsData.findIndex(item => item.id == id);
+                    if (index !== -1) {
+                        brandsData[index] = { id: parseInt(id), name, description };
+                    }
+                } else {
+                    // Agregar nuevo elemento
+                    const newId = brandsData.length > 0 ? Math.max(...brandsData.map(item => item.id)) + 1 : 1;
+                    brandsData.push({ id: newId, name, description });
+                }
+                
+                // Actualizar la vista y guardar
+                renderBrands();
+                loadBrandList();
+                saveToLocalStorage();
+                resetBrandForm();
+                updateStats();
+                
+                showNotification('Marca guardada correctamente', 'success');
+            });
+        }
+
+        // Cargar lista de ranking en el panel
+        function loadRankingList() {
+            const rankingList = document.getElementById('rankingList');
+            rankingList.innerHTML = '';
+            
+            // Ordenar por posición
+            rankingData.sort((a, b) => a.position - b.position);
+            
+            if (rankingData.length === 0) {
+                rankingList.innerHTML = '<p style="text-align: center; padding: 20px;">No hay lugares en el ranking. Agrega el primero.</p>';
+                return;
+            }
+            
+            rankingData.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'data-item';
+                itemElement.innerHTML = `
+                    <div class="data-item-info">
+                        <h4>#${item.position} - ${item.emoji || '🏆'} ${item.name}</h4>
+                        <p>${item.description}</p>
+                    </div>
+                    <div class="data-item-actions">
+                        <button class="edit-btn-small" onclick="editRankingItem(${item.id})">Editar</button>
+                        <button class="delete-btn-small" onclick="deleteRankingItem(${item.id})">Eliminar</button>
+                    </div>
+                `;
+                rankingList.appendChild(itemElement);
+            });
+        }
+
+        // Cargar lista de experiencias en el panel
+        function loadExperienceList() {
+            const experienceList = document.getElementById('experienceList');
+            experienceList.innerHTML = '';
+            
+            if (experiencesData.length === 0) {
+                experienceList.innerHTML = '<p style="text-align: center; padding: 20px;">No hay experiencias programadas. Agrega la primera.</p>';
+                return;
+            }
+            
+            experiencesData.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'data-item';
+                itemElement.innerHTML = `
+                    <div class="data-item-info">
+                        <h4>${item.month} - ${item.title}</h4>
+                        <p>${item.description}</p>
+                        <small>Estado: ${getStatusText(item.status)}</small>
+                    </div>
+                    <div class="data-item-actions">
+                        <button class="edit-btn-small" onclick="editExperienceItem(${item.id})">Editar</button>
+                        <button class="delete-btn-small" onclick="deleteExperienceItem(${item.id})">Eliminar</button>
+                    </div>
+                `;
+                experienceList.appendChild(itemElement);
+            });
+        }
+
+        // Cargar lista de marcas en el panel
+        function loadBrandList() {
+            const brandList = document.getElementById('brandList');
+            brandList.innerHTML = '';
+            
+            if (brandsData.length === 0) {
+                brandList.innerHTML = '<p style="text-align: center; padding: 20px;">No hay marcas colaboradoras. Agrega la primera.</p>';
+                return;
+            }
+            
+            brandsData.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'data-item';
+                itemElement.innerHTML = `
+                    <div class="data-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.description || 'Sin descripción'}</p>
+                    </div>
+                    <div class="data-item-actions">
+                        <button class="edit-btn-small" onclick="editBrandItem(${item.id})">Editar</button>
+                        <button class="delete-btn-small" onclick="deleteBrandItem(${item.id})">Eliminar</button>
+                    </div>
+                `;
+                brandList.appendChild(itemElement);
+            });
+        }
+
+        // Editar elemento del ranking
+        function editRankingItem(id) {
+            const item = rankingData.find(item => item.id === id);
+            if (item) {
+                document.getElementById('rankingId').value = item.id;
+                document.getElementById('rankingName').value = item.name;
+                document.getElementById('rankingDescription').value = item.description;
+                document.getElementById('rankingPosition').value = item.position;
+                document.getElementById('rankingEmoji').value = item.emoji || '🏆';
+                
+                // Desplazar al formulario
+                document.getElementById('admin-ranking').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Editar elemento de experiencia
+        function editExperienceItem(id) {
+            const item = experiencesData.find(item => item.id === id);
+            if (item) {
+                document.getElementById('experienceId').value = item.id;
+                document.getElementById('experienceMonth').value = item.month;
+                document.getElementById('experienceTitle').value = item.title;
+                document.getElementById('experienceDescription').value = item.description;
+                document.getElementById('experienceStatus').value = item.status;
+                
+                // Desplazar al formulario
+                document.getElementById('admin-experiences').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Editar elemento de marca
+        function editBrandItem(id) {
+            const item = brandsData.find(item => item.id === id);
+            if (item) {
+                document.getElementById('brandId').value = item.id;
+                document.getElementById('brandName').value = item.name;
+                document.getElementById('brandDescription').value = item.description || '';
+                
+                // Desplazar al formulario
+                document.getElementById('admin-brands').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Eliminar elemento del ranking
+        function deleteRankingItem(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar este lugar del ranking?')) {
+                rankingData = rankingData.filter(item => item.id !== id);
+                renderRanking();
+                loadRankingList();
+                saveToLocalStorage();
+                updateStats();
+                showNotification('Lugar eliminado del ranking', 'success');
+            }
+        }
+
+        // Eliminar elemento de experiencia
+        function deleteExperienceItem(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar esta experiencia?')) {
+                experiencesData = experiencesData.filter(item => item.id !== id);
+                renderExperiences();
+                loadExperienceList();
+                saveToLocalStorage();
+                updateStats();
+                showNotification('Experiencia eliminada', 'success');
+            }
+        }
+
+        // Eliminar elemento de marca
+        function deleteBrandItem(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar esta marca?')) {
+                brandsData = brandsData.filter(item => item.id !== id);
+                renderBrands();
+                loadBrandList();
+                saveToLocalStorage();
+                updateStats();
+                showNotification('Marca eliminada', 'success');
+            }
+        }
+
+        // Resetear formulario de ranking
+        function resetRankingForm() {
+            document.getElementById('rankingForm').reset();
+            document.getElementById('rankingId').value = '';
+            document.getElementById('rankingEmoji').value = '🏆';
+        }
+
+        // Resetear formulario de experiencias
+        function resetExperienceForm() {
+            document.getElementById('experienceForm').reset();
+            document.getElementById('experienceId').value = '';
+        }
+
+        // Resetear formulario de marcas
+        function resetBrandForm() {
+            document.getElementById('brandForm').reset();
+            document.getElementById('brandId').value = '';
+        }
+
+        // Obtener texto del estado
+        function getStatusText(status) {
+            const statusMap = {
+                'coming-soon': 'Coming Soon',
+                'open': 'Inscripciones Abiertas',
+                'waitlist': 'Lista de Espera',
+                'completed': 'Completada'
+            };
+            return statusMap[status] || status;
+        }
+
+        // Exportar datos
+        function exportData(type) {
+            let data, filename;
+            
+            switch(type) {
+                case 'ranking':
+                    data = rankingData;
+                    filename = 'ranking-wellness-' + new Date().toISOString().split('T')[0] + '.json';
+                    break;
+                case 'experiences':
+                    data = experiencesData;
+                    filename = 'experiencias-wellness-' + new Date().toISOString().split('T')[0] + '.json';
+                    break;
+                case 'brands':
+                    data = brandsData;
+                    filename = 'marcas-wellness-' + new Date().toISOString().split('T')[0] + '.json';
+                    break;
+                default:
+                    return;
+            }
+            
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showNotification(`Datos exportados como ${filename}`, 'success');
+        }
+
+        // Importar datos
+        function importData() {
+            const fileInput = document.getElementById('importFile');
+            if (!fileInput.files.length) {
+                showNotification('Por favor, selecciona un archivo JSON', 'error');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    // Determinar qué tipo de datos son
+                    if (data.length > 0) {
+                        const firstItem = data[0];
+                        
+                        if (firstItem.position !== undefined) {
+                            // Es ranking
+                            rankingData = data;
+                            renderRanking();
+                            showNotification('Ranking importado correctamente', 'success');
+                        } else if (firstItem.month !== undefined) {
+                            // Son experiencias
+                            experiencesData = data;
+                            renderExperiences();
+                            showNotification('Experiencias importadas correctamente', 'success');
+                        } else if (firstItem.name !== undefined) {
+                            // Son marcas
+                            brandsData = data;
+                            renderBrands();
+                            showNotification('Marcas importadas correctamente', 'success');
+                        }
+                        
+                        saveToLocalStorage();
+                        updateStats();
+                        fileInput.value = '';
+                    }
+                } catch (error) {
+                    showNotification('Error al importar el archivo. Verifica que sea un JSON válido.', 'error');
+                }
+            };
+            
+            reader.readAsText(file);
+        }
+
+        // Borrar todos los datos
+        function clearAllData() {
+            if (confirm('¿ESTÁS SEGURO? Esto eliminará TODOS los datos (ranking, experiencias y marcas). Esta acción no se puede deshacer.')) {
+                rankingData = [];
+                experiencesData = [];
+                brandsData = [];
+                
+                renderRanking();
+                renderExperiences();
+                renderBrands();
+                saveToLocalStorage();
+                updateStats();
+                
+                showNotification('Todos los datos han sido eliminados', 'success');
+            }
+        }
+
+        // Guardar en localStorage
+        function saveToLocalStorage() {
+            localStorage.setItem('rankingData', JSON.stringify(rankingData));
+            localStorage.setItem('experiencesData', JSON.stringify(experiencesData));
+            localStorage.setItem('brandsData', JSON.stringify(brandsData));
+        }
+
+        // Cargar desde localStorage
+        function loadFromLocalStorage() {
+            const savedRanking = localStorage.getItem('rankingData');
+            const savedExperiences = localStorage.getItem('experiencesData');
+            const savedBrands = localStorage.getItem('brandsData');
+            
+            if (savedRanking) rankingData = JSON.parse(savedRanking);
+            if (savedExperiences) experiencesData = JSON.parse(savedExperiences);
+            if (savedBrands) brandsData = JSON.parse(savedBrands);
+        }
+
+        // Mostrar notificación
+        function showNotification(message, type) {
+            const notification = document.getElementById('adminNotification');
+            notification.textContent = message;
+            notification.style.background = type === 'error' ? '#f44336' : '#4CAF50';
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Actualizar estadísticas
+        function updateStats() {
+            document.getElementById('statRanking').textContent = rankingData.length;
+            document.getElementById('statExperiences').textContent = experiencesData.length;
+            document.getElementById('statBrands').textContent = brandsData.length;
+        }
+
+        // Cargar datos al iniciar
+        loadFromLocalStorage();
+        renderRanking();
+        renderExperiences();
+        renderBrands();
+        updateStats();
+    </script>
+</body>
+</html>
